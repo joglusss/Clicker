@@ -1,0 +1,40 @@
+{
+    "Money": 2007194,
+    "Components": [
+        {
+            "Name": "first",
+            "Level": 5,
+            "Upgrade1": 50,
+            "Upgrade2": 100,
+            "Process": 1.214664340019226
+        },
+        {
+            "Name": "second",
+            "Level": 52,
+            "Upgrade1": 100,
+            "Upgrade2": 200,
+            "Process": 4.604559421539307
+        },
+        {
+            "Name": "third",
+            "Level": 5,
+            "Upgrade1": 100,
+            "Upgrade2": 150,
+            "Process": 5.230310440063477
+        },
+        {
+            "Name": "fourth",
+            "Level": 2,
+            "Upgrade1": 100,
+            "Upgrade2": 200,
+            "Process": 14.145554542541504
+        },
+        {
+            "Name": "fifth",
+            "Level": 14,
+            "Upgrade1": 200,
+            "Upgrade2": 400,
+            "Process": 13.70688533782959
+        }
+    ]
+}
