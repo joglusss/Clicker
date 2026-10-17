@@ -1,6 +1,8 @@
+using Clicker.Business;
 using Clicker.Business.Systems;
 using Clicker.Common.View;
 using Clicker.Data;
+using Clicker.Save;
 using Clicker.Save.Systems;
 using UnityEngine;
 using Leopotam.Ecs;
@@ -21,8 +23,8 @@ namespace Clicker
             _systems = new EcsSystems(_world);
         
             AddInjections();
-            AddOneFrames();
             AddSystems();
+            AddOneFrames();
         
             _systems.Init();
         }
@@ -41,6 +43,28 @@ namespace Clicker
             _world.Destroy();
             _world = null;
         }
+        
+        private void OnApplicationFocus(bool hasFocus)
+        {
+            if (_systems == null) return;
+            
+            if (!hasFocus)
+            {
+                _world.NewEntity()
+                    .Get<SaveEvent>() = new SaveEvent();
+            }
+        }
+        
+        private void OnApplicationPause(bool pauseStatus)
+        {
+            if (_systems == null) return;
+            
+            if (pauseStatus)
+            {
+                _world.NewEntity()
+                    .Get<SaveEvent>() = new SaveEvent();
+            }
+        }
 
         private void AddSystems()
         {
@@ -49,6 +73,7 @@ namespace Clicker
                 .Add(new CommonViewInitSystem())
                 .Add(new BusinessViewSystem())
                 .Add(new BusinessInputSystem())
+                .Add(new BusinessUpgradeSystem())
                 .Add(new BusinessSystem())
                 .Add(new CommonViewSystem())
                 .Add(new SaveSystem());
@@ -64,6 +89,10 @@ namespace Clicker
 
         private void AddOneFrames()
         {
+            _systems
+                .OneFrame<BusinessUpgradeEvent>()
+                .OneFrame<SaveEvent>();
+
         }
     }
 }

@@ -8,5 +8,8 @@ namespace Clicker.Business.Component
         public int Upgrade1;
         public int Upgrade2;
         public float Process;
+        public bool AvailableLevelUp;
+        public bool AvailableUpgrade1;
+        public bool AvailableUpgrade2;
     }
 }

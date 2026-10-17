@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 802065ec1d504c7bbc1c11eca8879323, type: 3}
   m_Name: StaticData
   m_EditorClassIdentifier: Assembly-CSharp::Clicker.Data.StaticData
+  <AutoSaveInterval>k__BackingField: 30
   <Businesses>k__BackingField:
   - <Name>k__BackingField: first
     <BaseCost>k__BackingField: 3

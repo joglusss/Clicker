@@ -6,6 +6,6 @@ namespace Clicker.Save
     public struct SaveData
     {
         public int Money;
-        public BusinessComponent[] Components;
+        public SaveBusinessData[] Components;
     }
 }

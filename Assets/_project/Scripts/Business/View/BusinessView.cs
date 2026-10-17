@@ -16,7 +16,7 @@ namespace Clicker.Business.View
         [SerializeField] private TMP_Text _upgrade1Name;
         [SerializeField] private TMP_Text _upgrade2Name;
         [SerializeField] private Image _process;
-            
+        
         private bool _isLevelUp;
         private bool _isGrade1Up;
         private bool _isGrade2Up;

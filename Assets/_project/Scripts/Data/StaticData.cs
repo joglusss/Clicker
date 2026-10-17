@@ -8,6 +8,7 @@ namespace Clicker.Data
     [CreateAssetMenu(fileName = "StaticData", menuName = "StaticData")]
     public class StaticData : ScriptableObject
     {
+        [field: SerializeField] public float AutoSaveInterval { get; private set; }
         [field: SerializeField] public BusinessConfig[] Businesses { get ; private set; }
         [field: SerializeField] public BusinessView BusinessViewPrefab { get; private set; } 
         [field: SerializeField] public CommonView CommonViewPrefab { get; private set; }
