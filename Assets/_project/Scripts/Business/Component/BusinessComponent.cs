@@ -5,8 +5,8 @@ namespace Clicker.Business.Component
     {
         public string Name;
         public int Level;
-        public int Upgrade1;
-        public int Upgrade2;
+        public bool Upgraded1;
+        public bool Upgraded2;
         public float Process;
         public bool AvailableLevelUp;
         public bool AvailableUpgrade1;

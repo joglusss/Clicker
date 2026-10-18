@@ -1,7 +1,6 @@
 using Clicker.Business.Component;
 using Clicker.Business.Config;
 using Clicker.Common;
-using Clicker.Data;
 using Leopotam.Ecs;
 using UnityEngine;
 
@@ -73,25 +72,25 @@ namespace Clicker.Business.Systems
                     view.LastLevelCost = levelCost;
                 }
 
-                if (view.LastGrade1 != data.Upgrade1 || !view.Initialized)
+                if (view.LastGrade1 != data.Upgraded1 || !view.Initialized)
                 {
-                    if(config.Grades1.Multiplier == data.Upgrade1)
+                    if(data.Upgraded1)
                         view.Link.SetNameGrade1Bought();
                     else
                         view.Link.SetNameGrade1(config.Grades1.Cost, config.Grades1.Multiplier);
                     
-                    view.LastGrade1 = data.Upgrade1;
+                    view.LastGrade1 = data.Upgraded1;
                 }
 
 
-                if (view.LastGrade2 != data.Upgrade2 || !view.Initialized)
+                if (view.LastGrade2 != data.Upgraded2 || !view.Initialized)
                 {
-                    if(config.Grades2.Multiplier == data.Upgrade2)
+                    if(data.Upgraded2)
                         view.Link.SetNameGrade2Bought();
                     else
                         view.Link.SetNameGrade2(config.Grades2.Cost, config.Grades2.Multiplier);
                     
-                    view.LastGrade2 = data.Upgrade2;
+                    view.LastGrade2 = data.Upgraded2;
                 }
                 
                 view.Initialized = true;

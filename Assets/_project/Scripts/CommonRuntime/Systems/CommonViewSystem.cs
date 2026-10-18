@@ -14,8 +14,12 @@ namespace Clicker.Common.View
             foreach (var i in _filter)
             {
                 ref var view = ref _filter.Get1(i);
-            
-                view.Link.SetMoney(_runtimeData.Money);
+
+                if (view.LastMoney != _runtimeData.Money)
+                {
+                    view.Link.SetMoney(_runtimeData.Money);
+                    view.LastMoney = _runtimeData.Money;   
+                }
             }
         }
     }

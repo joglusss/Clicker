@@ -14,8 +14,8 @@ namespace Clicker.Business.Component
         public bool LastAvailableUpgrade1;
         public bool LastAvailableUpgrade2;
         public int LastLevelCost;
-        public int LastGrade1;
-        public int LastGrade2;
+        public bool LastGrade1;
+        public bool LastGrade2;
         public bool Initialized;
     }
 }

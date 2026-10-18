@@ -64,5 +64,25 @@ MonoBehaviour:
     <Grades2>k__BackingField:
       <Cost>k__BackingField: 50000
       <Multiplier>k__BackingField: 400
+  - <Name>k__BackingField: sixded
+    <BaseCost>k__BackingField: 2000
+    <BaseIncome>k__BackingField: 1000
+    <ProcessDuration>k__BackingField: 17
+    <Grades1>k__BackingField:
+      <Cost>k__BackingField: 12666
+      <Multiplier>k__BackingField: 200
+    <Grades2>k__BackingField:
+      <Cost>k__BackingField: 50000
+      <Multiplier>k__BackingField: 400
+  - <Name>k__BackingField: asd
+    <BaseCost>k__BackingField: 2000
+    <BaseIncome>k__BackingField: 1000
+    <ProcessDuration>k__BackingField: 17
+    <Grades1>k__BackingField:
+      <Cost>k__BackingField: 12666
+      <Multiplier>k__BackingField: 200
+    <Grades2>k__BackingField:
+      <Cost>k__BackingField: 50000
+      <Multiplier>k__BackingField: 400
   <BusinessViewPrefab>k__BackingField: {fileID: 404006504024221505, guid: 24ac516f5e710a34293a21b62e19e538, type: 3}
   <CommonViewPrefab>k__BackingField: {fileID: 6254555840640929062, guid: d3144ace0d1131b488338756acba00db, type: 3}

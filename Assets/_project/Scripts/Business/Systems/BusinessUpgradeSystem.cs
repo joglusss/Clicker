@@ -31,13 +31,13 @@ namespace Clicker.Business.Systems
                     
                     case UpgradeType.Upgrade1:
                         _runtimeData.Money -= config.Grades1.Cost;
-                        data.Upgrade1 = config.Grades1.Multiplier;
+                        data.Upgraded1 = true;
                         Debug.Log($"name {data.Name} upgrade (1), Cost {config.Grades1.Cost}");
                         break;
                     
                     case UpgradeType.Upgrade2:
                         _runtimeData.Money -= config.Grades2.Cost;
-                        data.Upgrade2 = config.Grades2.Multiplier;
+                        data.Upgraded2 = true;
                         Debug.Log($"name {data.Name} upgrade (2)");
                         break;
                 }
@@ -50,11 +50,14 @@ namespace Clicker.Business.Systems
                 
                 data.AvailableLevelUp = GameMath.CalculateLevelCost(data, config) <= _runtimeData.Money;
                 
+                
                 data.AvailableUpgrade1 = config.Grades1.Cost <= _runtimeData.Money && 
-                                         data.Upgrade1 != config.Grades1.Multiplier;
+                                         !data.Upgraded1 &&
+                                         data.Level > 0;
                 
                 data.AvailableUpgrade2 = config.Grades2.Cost <= _runtimeData.Money && 
-                                         data.Upgrade2 == config.Grades2.Multiplier;
+                                         !data.Upgraded2 &&
+                                         data.Level > 0;
             }
         }
     }

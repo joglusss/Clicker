@@ -37,9 +37,16 @@ namespace Clicker.Save.Systems
                     ref var component = ref _businessFilter.Get1(i);
 
                     BusinessComponent businessComponent = component;
-                    component = save.Components
-                        .Select(SaveDataToBusinessComponent)
-                        .Single(x => x.Name == businessComponent.Name);
+                    try
+                    {
+                        component = save.Components
+                            .Select(SaveDataToBusinessComponent)
+                            .First(x => x.Name == businessComponent.Name);
+                    }
+                    catch
+                    {
+                        Debug.LogWarning($"Saved component not found: {businessComponent.Name}"); 
+                    }
                 }
             }
         }
@@ -66,10 +73,17 @@ namespace Clicker.Save.Systems
             
             if (!File.Exists(SavePath))
                 return false;
-
-            string json = File.ReadAllText(SavePath);
             
-            save = JsonConvert.DeserializeObject<SaveData>(json);
+            try
+            {
+                string json = File.ReadAllText(SavePath);
+                save = JsonConvert.DeserializeObject<SaveData>(json);
+            }
+            catch 
+            {
+                return false;
+            }
+           
             
             return true;
         }
@@ -102,8 +116,8 @@ namespace Clicker.Save.Systems
             {
                 Name = data.Name,
                 Level = data.Level,
-                Upgrade1 = data.Upgrade1,
-                Upgrade2 = data.Upgrade2,
+                Upgraded1 = data.Upgraded1,
+                Upgraded2 = data.Upgraded2,
                 Process = data.Process
             };
         }
@@ -114,8 +128,8 @@ namespace Clicker.Save.Systems
             {
                 Name = businessComponent.Name,
                 Level = businessComponent.Level,
-                Upgrade1 = businessComponent.Upgrade1,
-                Upgrade2 = businessComponent.Upgrade2,
+                Upgraded1 = businessComponent.Upgraded1,
+                Upgraded2 = businessComponent.Upgraded2,
                 Process = businessComponent.Process
             };
         }

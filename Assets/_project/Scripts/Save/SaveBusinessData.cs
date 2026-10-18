@@ -5,8 +5,8 @@ namespace Clicker.Save
     {
         public string Name;
         public int Level;
-        public int Upgrade1;
-        public int Upgrade2;
+        public bool Upgraded1;
+        public bool Upgraded2;
         public float Process;
     }
 }

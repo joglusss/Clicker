@@ -1,9 +1,6 @@
 using Clicker.Business.Component;
 using Clicker.Business.Config;
-using Clicker.Common;
-using Clicker.Data;
 using Leopotam.Ecs;
-using UnityEngine;
 
 namespace Clicker.Business.Systems
 {

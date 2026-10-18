@@ -1,5 +1,3 @@
-using Clicker.Business.Component;
-
 namespace Clicker.Save
 {
     [System.Serializable]
